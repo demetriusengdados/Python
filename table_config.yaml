@@ -1,46 +1,46 @@
 source_bucket_name: basedosdados-dev
 project_id_staging: basedosdados-dev
 project_id_prod: basedosdados-dev
-table_id: microdados # AUTO GENERATED
-dataset_id: br_ba_feiradesantana_camara_leis # AUTO GENERATED
+table_id: pais # AUTO GENERATED
+dataset_id: br_bd_diretorios_brasil # AUTO GENERATED
 
-url_ckan: https://basedosdados.org/dataset/br-ba-feiradesantana-camara-leis # AUTO GENERATED
-url_github: https://github.com/basedosdados/mais/tree/master/bases/br_ba_feiradesantana-camara_leis # AUTO GENERATED
+url_ckan: https://basedosdados.org/dataset/br-bd-diretorios-brasil # AUTO GENERATED
+url_github: https://github.com/basedosdados/mais/tree/master/bases/br_bd_diretorios_brasil # AUTO GENERATED
 
-version: v1.0
+version: v1.0 # REQUIRED
 
-last_updated: 2021-03-14 # AUTO GENERATED
+last_updated: 2021-08-01 # AUTO GENERATED
 
 # Descreva a tabela. Essas são as primeiras frases que um usuário vai ver.
 # Você não precisa ser muito conciso. Sinta-se a vontade para dar exemplos de
 # como usar os dados.
 # Se souber, liste também aplicações: pesquisa, apps, etc. que usem os dados.
 description: |  # REQUIRED
-    Todas as leis do município de Feira de Santana até 2019.
+    A tabela contém dados de cada país como seu nome, código OCDE e sua nacionalidade
 
 # Quem está completando esse arquivo config?
 published_by:
-    name: Ana Paula Gomes  # REQUIRED
-    code_url: https://github.com/basedosdados/mais/tree/master/bases/br_ba_feiradesantana_camara_leis/code # REQUIRED
-    website: https://www.dadosabertosdefeira.com.br
-    email: dadosabertosdefeira@gmail.com
+    name: Matheus Valentim # REQUIRED
+    code_url: https://github.com/basedosdados/mais/tree/master/bases/br_bd_diretorios_brasil/code # REQUIRED
+    website: https://github.com/mavalentim
+    email: mavalentim.b@gmail.com
 
 # Qual organização/departamento/pessoa tratou os dados?
 # As vezes há um ponto intermediário entre os dados originais e subir na Base dos Dados.
 # Se essa pessoa é você, preencha abaixo com suas informações.
 treated_by:
-    name: Ana Paula Gomes
-    code_url: https://github.com/dadosAbertosDeFeira/leis-municipais
-    website: https://www.dadosabertosdefeira.com.br
-    email: dadosabertosdefeira@gmail.com
+    name: Matheus Valentim # REQUIRED
+    code_url: https://github.com/basedosdados/mais/tree/master/bases/br_bd_diretorios_brasil/code # REQUIRED
+    website: https://github.com/mavalentim
+    email: mavalentim.b@gmail.com
 
 # Se houve passos de tratamento, limpeza e manipulação de dados, descreva-os aqui.
 treatment_description: | 
-    Conversão de JSON para CSV.
+    -Limpeza de linhas e renomeação
 
 # Com qual frequência a base é atualizada?
 # Opções: hora | dia | semana | mes | 1 ano | 2 anos | 5 anos | 10 anos | unico | recorrente
-data_update_frequency: único
+data_update_frequency: unico # REQUIRED 
 
 # Nível da observação (qual é a granularidade de cada linha na tabela)
 # Escolha todas as opções necessárias.
@@ -49,12 +49,13 @@ data_update_frequency: único
 #   - em portugues (ou seja, não use os nomes de colunas abaixo)
 # Exemplos: pais, estado, municipio, cidade, hora, dia, semana, mes, ano, etc.
 observation_level: #REQUIRED
-    - lei
+    - pais
 
 # Quais colunas identificam uma linha unicamente?
 # Preencha com os nomes de colunas. Ex: id_municipio, ano.
 # Pode ser vazio pois certas tabelas não possuem identificadores.
 primary_keys:
+    - id_pais
 
 # Qual é a cobertura espacial da tabela?
 # Regras:
@@ -66,13 +67,12 @@ primary_keys:
 # Exemplo 2: tabela que cubra países inteiros na América Latina
 #   - brasil, argentina, peru, equador
 coverage_geo:
-    - brasil
-    - BA
-    - Feira de Santana
+    - mundo
 
 # Qual é a cobertura temporal (em anos) da tabela?
 # Opções: ..., 1990, 1991, ..., 1999, 2000, 2001, ..., 2019, 2020, ...
 coverage_time:
+    - unico
 
 # Liste as colunas da tabela que representam partições.
 # Não esqueça de deletar essas colunas nas tabelas .csv na hora de subir para o BigQuery.
@@ -91,25 +91,19 @@ partitions: # REQUIRED
 columns: # REQUIRED
   
     -   
-        name: titulo
-        description: Nome da lei
+        name: id_pais
+        description: ID País - OCDE
         is_in_staging: True # Bool [True, False], whether the column is in the staging table
         is_partition: False # Bool [True, False], whether the column is a partition.
   
     -   
-        name: categoria
-        description: Qual a categoria da lei (e.g. Lei Ordinária, Lei Complementar)
+        name: nome
+        description: Nome do País
         is_in_staging: True # Bool [True, False], whether the column is in the staging table
         is_partition: False # Bool [True, False], whether the column is a partition.
   
     -   
-        name: resumo
-        description: Um resumo da lei (geralmente o que aparece no site antes da visualização completa).
-        is_in_staging: True # Bool [True, False], whether the column is in the staging table
-        is_partition: False # Bool [True, False], whether the column is a partition.
-  
-    -   
-        name: texto
-        description: O texto completo da lei.
+        name: nacionalidade
+        description: Nacionalidade
         is_in_staging: True # Bool [True, False], whether the column is in the staging table
         is_partition: False # Bool [True, False], whether the column is a partition.

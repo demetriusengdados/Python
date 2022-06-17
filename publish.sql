@@ -18,10 +18,10 @@ TIPOS:
     - Mais detalhes: https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types
 
 */
-CREATE VIEW basedosdados-dev.br_ba_feiradesantana_camara_leis.microdados AS
+
+CREATE VIEW basedosdados-dev.br_bd_diretorios_brasil.pais AS
 SELECT 
-SAFE_CAST(titulo AS STRING) titulo,
-SAFE_CAST(categoria AS STRING) categoria,
-SAFE_CAST(resumo AS STRING) resumo,
-SAFE_CAST(texto AS STRING) texto
-from basedosdados-dev.br_ba_feiradesantana_camara_leis_staging.microdados as t
+SAFE_CAST(id_pais AS STRING) id_pais,
+SAFE_CAST(nome AS STRING) nome,
+SAFE_CAST(nacionalidade AS STRING) nacionalidade
+FROM basedosdados-dev.br_bd_diretorios_brasil_staging.pais AS t
