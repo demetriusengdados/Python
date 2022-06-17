@@ -1,4 +1,4 @@
-A tabela contém dados de cada país como seu nome, código OCDE e sua nacionalidade
+Diretório listando informações do IBGE sobre unidades da federação brasileiras.
 
 
 Para saber mais acesse:
@@ -10,38 +10,36 @@ Apoia-se: https://apoia.se/basedosdados
 
 Publicado por
 -------------
-Nome: Matheus Valentim
-Código: https://github.com/basedosdados/mais/tree/master/bases/br_bd_diretorios_brasil/code
-Website: https://github.com/mavalentim
-Email: mavalentim.b@gmail.comTratado por
+Nome: Ricardo Dahis
+Código: https://github.com/basedosdados/mais/tree/master/bases/br_basedosdados_diretorios_brasil/code
+Website: www.ricardodahis.com
+Email: rdahis@basedosdados.orgTratado por
 -----------
-Nome: Matheus Valentim
-Código: https://github.com/basedosdados/mais/tree/master/bases/br_bd_diretorios_brasil/code
-Website: https://github.com/mavalentim
-Email: mavalentim.b@gmail.com
+Nome: Ricardo Dahis
+Código: https://github.com/basedosdados/mais/tree/master/bases/br_basedosdados_diretorios_brasil/code
+Email: rdahis@basedosdados.org
 
 Nível da Observação (i.e. a granularidade da linha)
 -------------------
-- pais
+- unidade da federação
 
 Colunas identificando linhas unicamente
 -------------------
-- id_pais
+- id_uf
 
 Cobertura Temporal
 ------------------
-- unico
 
 Cobertura Espacial
 ------------------
-- mundo
+- brasil
 
 Tratamento
 ----------
--Limpeza de linhas e renomeação
+Coletei os valores de tabelas originais do IBGE.
 
 Frequencia de Atualização
 -------------------------
-unico
+recorrente
 
 

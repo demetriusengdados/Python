@@ -1,34 +1,39 @@
-dataset_id: br_ba_feiradesantana_camara_leis # AUTO GENERATED
+dataset_id: br_bd_diretorios_brasil # AUTO GENERATED
 
-url_ckan: https://basedosdados.org/dataset/br-ba-feiradesantana-camara-leis
-url_github: https://github.com/basedosdados/mais/tree/master/bases/br_ba_feiradesantana_camara_leis
+url_ckan: https://basedosdados.org/dataset/br-bd-diretorios-brasil
+url_github: https://github.com/basedosdados/mais/tree/master/bases/br_bd_diretorios_brasil
 
 # Descreva a base.
 # Ela é sobre o que?
 # Quais as principais fontes de dados?
 # Há links para FAQs e explicações?
 description: | # REQUIRED
-    Essa base de dados contém as leis municipais de Feira de Santana (BA).
+    Conjunto de diretórios brasileiros compilados pela Base dos Dados para cruzar informações de diferentes instituições.
 
 # Qual organização disponibiliza os dados originais?
 # Opções: escolher dessa lista -> https://basedosdados.org/api/3/action/organization_list
-organization: br-ba-feiradesantana-camara
+organization: 
+    - "instituto-brasileiro-de-geografia-e-estatistica"
+    - "ministerio-da-educacao-e-cultura-mec"
+    - "secretaria-de-educacao-de-sao-paulo" # REQUIRED
 
 # Qual departamento/grupo/pessoa mantém os dados originais?
 author:
-    name: <nome>
-    email: ouvidoria@feiradesantana.ba.leg.br
+    name: Ricardo Dahis
+    email: rdahis@basedosdados.org
 
 # Onde encontrar os dados originais e mais informações?
 website:
-    - https://leismunicipais.com.br/legislacao-municipal/328/leis-de-feira-de-santana/
-    - https://www.feiradesantana.ba.leg.br/
+    - https://www.ibge.gov.br/estatisticas/downloads-estatisticas.html
+    - https://dados.educacao.sp.gov.br/story/idesp
+    - http://bve.cibec.inep.gov.br/web/guest/dados
 
 # Quais grupos caracterizam a base?
 # Opções: escolher dessa lista -> https://basedosdados.org/api/3/action/group_list
 groups:
-    - gov-fin-pub
-    - justica
+    - "territorio"
+    - "educacao"
+    - "ciencia-tec-inov"
 
 # Quais etiquetas caracterizam a base?
 # Opções: escolher dessa lista -> https://basedosdados.org/api/3/action/tag_list
@@ -37,7 +42,9 @@ groups:
 #   - sem acentos
 #   - não repita nomes de grupos (ex. educacao, saude, meio ambiente, economia, etc.)
 tags:
-    - lei
+    - diretorio
+    - municipios
+    - escolas
 
 # Em quais línguas a base (ou a fonte original) está disponível?
 # Regras: minúsculo, sem acentos.
@@ -49,19 +56,19 @@ languages:
 free: sim
 
 # Are microdata available for download?
-microdata: sim
+microdata: não
 
 # Existe uma API na fonte original?
-API: nao
+API: não
 
 # É necessário registrar um usuário para baixar os dados originais?
-registration: nao
+registration: não
 
 # Como os dados originais estão disponibilizados?
 availability: online
 
 # A fonte original requer IP brasileiro para acesso?
-brazilian_IP: nao
+brazilian_IP: não
 
 # Essa base está sob qual licença?
 # A licença MIT se aplica a bases públicas.
