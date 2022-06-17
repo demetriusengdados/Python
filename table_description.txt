@@ -1,40 +1,51 @@
-Sinônimos das descrições de categorias da Classificação Brasileira de Ocupações 2002.
+Informações de alfabetização gerais por setor censitário
 
 
 Para saber mais acesse:
-Website: https://basedosdados.org/dataset/br-ibge-cbo-2002
-Github: https://github.com/basedosdados/mais/tree/master/bases/br_ibge_cbo_2002
+Website: https://basedosdados.org/dataset/br-ibge-censo-demografico
+Github: https://github.com/basedosdados/mais/tree/master/bases/br_ibge_censo_demografico
 
 Ajude a manter o projeto :)
 Apoia-se: https://apoia.se/basedosdados
 
 Publicado por
 -------------
-Nome: Ricardo Dahis
-Código: https://github.com/basedosdados/mais/tree/master/bases/br_ibge_cbo_2002/code
-Website: www.ricardodahis.com
-Email: rdahis@basedosdados.orgTratado por
+Nome: 
+Código: https://github.com/basedosdados/mais/tree/master/bases/br_ibge_censo_demografico/code
+Website: github.com/d116626
+Email: ds.oliveira404@gmail.comTratado por
 -----------
-Nome: <nome>
+Nome: 
+Código: https://github.com/basedosdados/mais/tree/master/bases/br_ibge_censo_demografico/code
+Website: github.com/d116626
+Email: ds.oliveira404@gmail.com
+
+Partições (Filtre a tabela por essas colunas para economizar dinheiro e tempo)
+---------
+- sigla_uf
 
 Nível da Observação (i.e. a granularidade da linha)
 -------------------
-- CBO2002
-- sinônimo
+- setor censitário
 
 Colunas identificando linhas unicamente
 -------------------
-- cbo_2002
-- sinonimo
+- id_setor_censitario
 
 Cobertura Temporal
 ------------------
+- 2010
 
 Cobertura Espacial
 ------------------
+- brasil
+
+Tratamento
+----------
+Padronização do nome das colunas, remoção de textos e logos, unificação das bases
 
 Frequencia de Atualização
 -------------------------
-único
+10 anos
 
 
