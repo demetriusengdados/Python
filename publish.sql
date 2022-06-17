@@ -18,11 +18,8 @@ TIPOS:
     - Mais detalhes: https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types
 
 */
-
-CREATE VIEW basedosdados-dev.br_ggb_relatorio_lgbtqi.raca_cor AS
+CREATE VIEW basedosdados-dev.br_ibge_cbo_2002.sinonimo AS
 SELECT 
-SAFE_CAST(ano AS STRING) ano,
-SAFE_CAST(raca_cor AS STRING) raca_cor,
-SAFE_CAST(homicidios AS INT64) homicidios,
-SAFE_CAST(prop_homicidios_total AS FLOAT64) prop_homicidios_total
-from basedosdados-dev.br_ggb_relatorio_lgbtqi_staging.raca_cor as t
+SAFE_CAST(cbo_2002 AS STRING) cbo_2002,
+SAFE_CAST(sinonimo AS STRING) sinonimo
+FROM basedosdados-dev.br_ibge_cbo_2002_staging.sinonimo AS t
