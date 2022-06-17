@@ -1,40 +1,46 @@
-Setores censitarios do Censo Brasileiro de 2010
+A tabela contém valores para assassinatos LGBTQIA+ no Brasil, extraídos dos relatórios anuais do Grupo Gay da Bahia, agregados pela raça/cor da vítima pertencia. 
 
 
 Para saber mais acesse:
-Website: https://basedosdados.org/dataset/br-geobr-mapas
-Github: https://github.com/basedosdados/mais/tree/master/bases/br_geobr_mapas
+Website: https://basedosdados.org/dataset/br-ggb-relatorio-lgbtqi
+Github: https://github.com/basedosdados/mais/tree/master/bases/br_ggb_relatorio_lgbtqi
 
 Ajude a manter o projeto :)
 Apoia-se: https://apoia.se/basedosdados
 
 Publicado por
 -------------
-Nome: João Carabetta
-Código: https://github.com/basedosdados/mais/tree/master/bases/br_geobr_mapas/code
-Website: https://basedosdados.org
-Email: joao.carabetta@gmail.comTratado por
+Nome: Matheus Valentim
+Código: https://github.com/basedosdados/mais/tree/master/bases/br_ggb_relatorio_lgbtqi/code
+Website: https://github.com/mavalentim
+Email: mavalentim.b@gmail.comTratado por
 -----------
-Nome: geobr
-Código: https://github.com/ipeaGIT/geobr
-Website: https://github.com/ipeaGIT/geobr
-Email: 
-
-Partições (Filtre a tabela por essas colunas para economizar dinheiro e tempo)
----------
-- sigla_uf
+Nome: Matheus Valentim
+Código: https://github.com/basedosdados/mais/tree/master/bases/br_ggb_relatorio_lgbtqi/code
+Website: https://github.com/mavalentim
+Email: mavalentim.b@gmail.com
 
 Nível da Observação (i.e. a granularidade da linha)
 -------------------
-- setor censitario
+- raca/cor
+- ano
 
 Colunas identificando linhas unicamente
 -------------------
-- id_setor_censitario
+- raca_cor
+- ano
 
 Cobertura Temporal
 ------------------
-- 2010
+- 2011
+- 2012
+- 2013
+- 2014
+- 2015
+- 2016
+- 2017
+- 2018
+- 2019
 
 Cobertura Espacial
 ------------------
@@ -42,10 +48,10 @@ Cobertura Espacial
 
 Tratamento
 ----------
-Limpeza para consistência
+O tratamento consistiu em ler o pdf do relatório com a biblioteca tabulizer para anos mais recentes e coleta manual para anos anteriores.
 
 Frequencia de Atualização
 -------------------------
-unico
+1 ano
 
 
