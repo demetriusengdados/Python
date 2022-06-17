@@ -18,17 +18,10 @@ TIPOS:
     - Mais detalhes: https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types
 
 */
-
-CREATE VIEW basedosdados-dev.br_anatel_telefonia_movel.tecnologia AS
+CREATE VIEW basedosdados-dev.br_ba_feiradesantana_camara_leis.microdados AS
 SELECT 
-SAFE_CAST(ano AS INT64) ano,
-SAFE_CAST(mes AS INT64) mes,
-SAFE_CAST(sigla_uf AS STRING) sigla_uf,
-SAFE_CAST(ddd AS STRING) ddd,
-SAFE_CAST(cnpj AS STRING) cnpj,
-SAFE_CAST(empresa AS STRING) empresa,
-SAFE_CAST(porte_empresa AS STRING) porte_empresa,
-SAFE_CAST(tecnologia AS STRING) tecnologia,
-SAFE_CAST(sinal AS STRING) sinal,
-SAFE_CAST(acessos AS INT64) acessos
-FROM basedosdados-dev.br_anatel_telefonia_movel_staging.tecnologia AS t
+SAFE_CAST(titulo AS STRING) titulo,
+SAFE_CAST(categoria AS STRING) categoria,
+SAFE_CAST(resumo AS STRING) resumo,
+SAFE_CAST(texto AS STRING) texto
+from basedosdados-dev.br_ba_feiradesantana_camara_leis_staging.microdados as t

@@ -1,34 +1,34 @@
-dataset_id: br_anatel_telefonia_movel # AUTO GENERATED
+dataset_id: br_ba_feiradesantana_camara_leis # AUTO GENERATED
 
-url_ckan: https://basedosdados.org/dataset/br-anatel-telefonia-movel
-url_github: https://github.com/basedosdados/mais/tree/master/bases/br_anatel_telefonia_movel
+url_ckan: https://basedosdados.org/dataset/br-ba-feiradesantana-camara-leis
+url_github: https://github.com/basedosdados/mais/tree/master/bases/br_ba_feiradesantana_camara_leis
 
 # Descreva a base.
 # Ela é sobre o que?
 # Quais as principais fontes de dados?
 # Há links para FAQs e explicações?
 description: | # REQUIRED
-    Dados da Anatel referente a dados móveis, também conhecido como Serviço Móvel Pessoal (SMP). A agência oferece análises preliminares sobre os dados numa perspectiva geral no próprio site de dowloand dos microdados.
+    Essa base de dados contém as leis municipais de Feira de Santana (BA).
 
 # Qual organização disponibiliza os dados originais?
 # Opções: escolher dessa lista -> https://basedosdados.org/api/3/action/organization_list
-organization: Agência Nacional de Telecomunicações # REQUIRED
+organization: br-ba-feiradesantana-camara
 
 # Qual departamento/grupo/pessoa mantém os dados originais?
 author:
     name: <nome>
-    email: <email>
+    email: ouvidoria@feiradesantana.ba.leg.br
 
 # Onde encontrar os dados originais e mais informações?
 website:
-    - https://informacoes.anatel.gov.br/paineis/acessos/telefonia-movel
-
+    - https://leismunicipais.com.br/legislacao-municipal/328/leis-de-feira-de-santana/
+    - https://www.feiradesantana.ba.leg.br/
 
 # Quais grupos caracterizam a base?
 # Opções: escolher dessa lista -> https://basedosdados.org/api/3/action/group_list
 groups:
-    - comunicacao
-    - ciencia-tec-inov
+    - gov-fin-pub
+    - justica
 
 # Quais etiquetas caracterizam a base?
 # Opções: escolher dessa lista -> https://basedosdados.org/api/3/action/tag_list
@@ -37,15 +37,13 @@ groups:
 #   - sem acentos
 #   - não repita nomes de grupos (ex. educacao, saude, meio ambiente, economia, etc.)
 tags:
-    - telefone 
-    - internet
+    - lei
 
 # Em quais línguas a base (ou a fonte original) está disponível?
 # Regras: minúsculo, sem acentos.
 # Opções: portugues, ingles, espanhol, frances, chines, russo, hindi, alemao, etc.
 languages:
     - portugues
-    
 
 # Os dados originais estão disponíveis de graça?
 free: sim

@@ -1,49 +1,46 @@
 source_bucket_name: basedosdados-dev
 project_id_staging: basedosdados-dev
 project_id_prod: basedosdados-dev
-table_id: tecnologia # AUTO GENERATED
-dataset_id: br_anatel_telefonia_movel # AUTO GENERATED
+table_id: microdados # AUTO GENERATED
+dataset_id: br_ba_feiradesantana_camara_leis # AUTO GENERATED
 
-url_ckan: https://basedosdados.org/dataset/br-anatel-telefonia-movel # AUTO GENERATED
-url_github: https://github.com/basedosdados/mais/tree/master/bases/br_anatel_telefonia_movel # AUTO GENERATED
+url_ckan: https://basedosdados.org/dataset/br-ba-feiradesantana-camara-leis # AUTO GENERATED
+url_github: https://github.com/basedosdados/mais/tree/master/bases/br_ba_feiradesantana-camara_leis # AUTO GENERATED
 
-version: v2.0 # REQUIRED
+version: v1.0
 
-last_updated: 2021-09-28 # AUTO GENERATED
+last_updated: 2021-03-14 # AUTO GENERATED
 
 # Descreva a tabela. Essas são as primeiras frases que um usuário vai ver.
 # Você não precisa ser muito conciso. Sinta-se a vontade para dar exemplos de
 # como usar os dados.
 # Se souber, liste também aplicações: pesquisa, apps, etc. que usem os dados.
 description: |  # REQUIRED
-    Dados de telefonia móvel (também conhecido como Serviço Móvel Pessoal) de 2009 a 2018 para total de acessos referentes a DDD e a tecnologia de conexão.
-    
+    Todas as leis do município de Feira de Santana até 2019.
 
 # Quem está completando esse arquivo config?
 published_by:
-    name: Lucas Nascimento Moreira # REQUIRED
-    code_url: https://github.com/basedosdados/mais/tree/master/bases/br_anatel_telefonia_movel/code # REQUIRED
-    website: <website>
-    email: lucas.nasc.m@gmail.com
+    name: Ana Paula Gomes  # REQUIRED
+    code_url: https://github.com/basedosdados/mais/tree/master/bases/br_ba_feiradesantana_camara_leis/code # REQUIRED
+    website: https://www.dadosabertosdefeira.com.br
+    email: dadosabertosdefeira@gmail.com
 
 # Qual organização/departamento/pessoa tratou os dados?
 # As vezes há um ponto intermediário entre os dados originais e subir na Base dos Dados.
 # Se essa pessoa é você, preencha abaixo com suas informações.
 treated_by:
-    name: Lucas Nascimento Moreira # REQUIRED
-    code_url: https://github.com/basedosdados/mais/tree/master/bases/br_anatel_telefonia_movel/code # REQUIRED
-    website: <website>
-    email: lucas.nasc.m@gmail.com
+    name: Ana Paula Gomes
+    code_url: https://github.com/dadosAbertosDeFeira/leis-municipais
+    website: https://www.dadosabertosdefeira.com.br
+    email: dadosabertosdefeira@gmail.com
 
 # Se houve passos de tratamento, limpeza e manipulação de dados, descreva-os aqui.
 treatment_description: | 
-    - Download das bases e a renomeação das colunas segundo padrão da BD+;
-    - Agrupamento dos dados de observações duplicadas;
-    - Compatibilização da base para identificação única das observações;
+    Conversão de JSON para CSV.
 
 # Com qual frequência a base é atualizada?
 # Opções: hora | dia | semana | mes | 1 ano | 2 anos | 5 anos | 10 anos | unico | recorrente
-data_update_frequency: mes # REQUIRED 
+data_update_frequency: único
 
 # Nível da observação (qual é a granularidade de cada linha na tabela)
 # Escolha todas as opções necessárias.
@@ -52,19 +49,12 @@ data_update_frequency: mes # REQUIRED
 #   - em portugues (ou seja, não use os nomes de colunas abaixo)
 # Exemplos: pais, estado, municipio, cidade, hora, dia, semana, mes, ano, etc.
 observation_level: #REQUIRED
-    - ddd
-    - tecnologia
+    - lei
 
 # Quais colunas identificam uma linha unicamente?
 # Preencha com os nomes de colunas. Ex: id_municipio, ano.
 # Pode ser vazio pois certas tabelas não possuem identificadores.
 primary_keys:
-    - ano
-    - mes
-    - ddd
-    - cnpj
-    - tecnologia
-    - sinal
 
 # Qual é a cobertura espacial da tabela?
 # Regras:
@@ -77,23 +67,12 @@ primary_keys:
 #   - brasil, argentina, peru, equador
 coverage_geo:
     - brasil
+    - BA
+    - Feira de Santana
 
 # Qual é a cobertura temporal (em anos) da tabela?
 # Opções: ..., 1990, 1991, ..., 1999, 2000, 2001, ..., 2019, 2020, ...
 coverage_time:
-    - 2009
-    - 2010
-    - 2011
-    - 2012
-    - 2013
-    - 2014
-    - 2015
-    - 2016
-    - 2017
-    - 2018
-    - 2019
-    - 2020
-    - 2021
 
 # Liste as colunas da tabela que representam partições.
 # Não esqueça de deletar essas colunas nas tabelas .csv na hora de subir para o BigQuery.
@@ -112,61 +91,25 @@ partitions: # REQUIRED
 columns: # REQUIRED
   
     -   
-        name: ano
-        description: Ano
+        name: titulo
+        description: Nome da lei
         is_in_staging: True # Bool [True, False], whether the column is in the staging table
         is_partition: False # Bool [True, False], whether the column is a partition.
   
     -   
-        name: mes
-        description: Mês
+        name: categoria
+        description: Qual a categoria da lei (e.g. Lei Ordinária, Lei Complementar)
         is_in_staging: True # Bool [True, False], whether the column is in the staging table
         is_partition: False # Bool [True, False], whether the column is a partition.
   
     -   
-        name: sigla_uf
-        description: Sigla da Unidade da Federação
+        name: resumo
+        description: Um resumo da lei (geralmente o que aparece no site antes da visualização completa).
         is_in_staging: True # Bool [True, False], whether the column is in the staging table
         is_partition: False # Bool [True, False], whether the column is a partition.
   
     -   
-        name: ddd
-        description: Código de Discagem Direta a Distância
-        is_in_staging: True # Bool [True, False], whether the column is in the staging table
-        is_partition: False # Bool [True, False], whether the column is a partition.
-  
-    -   
-        name: cnpj
-        description: Cadastro Nacional de Pessoa Jurídica
-        is_in_staging: True # Bool [True, False], whether the column is in the staging table
-        is_partition: False # Bool [True, False], whether the column is a partition.
-  
-    -   
-        name: empresa
-        description: Cadastro Nacional de Pessoa Jurídica
-        is_in_staging: True # Bool [True, False], whether the column is in the staging table
-        is_partition: False # Bool [True, False], whether the column is a partition.
-  
-    -   
-        name: porte_empresa
-        description: Qualificação do tamanho da companhia
-        is_in_staging: True # Bool [True, False], whether the column is in the staging table
-        is_partition: False # Bool [True, False], whether the column is a partition.
-  
-    -   
-        name: tecnologia
-        description: Padrão de tecnologia e conectividade dos celulares
-        is_in_staging: True # Bool [True, False], whether the column is in the staging table
-        is_partition: False # Bool [True, False], whether the column is a partition.
-  
-    -   
-        name: sinal
-        description: Geração de Sistemas Celulares
-        is_in_staging: True # Bool [True, False], whether the column is in the staging table
-        is_partition: False # Bool [True, False], whether the column is a partition.
-  
-    -   
-        name: acessos
-        description: Total de contratos sob tais especificações
+        name: texto
+        description: O texto completo da lei.
         is_in_staging: True # Bool [True, False], whether the column is in the staging table
         is_partition: False # Bool [True, False], whether the column is a partition.
