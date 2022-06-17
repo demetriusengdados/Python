@@ -1,32 +1,34 @@
-dataset_id: br_fgv_igp # AUTO GENERATED
+dataset_id: br_geobr_mapas # AUTO GENERATED
 
-url_ckan: https://basedosdados.org/dataset/br-fgv-igp
-url_github: https://github.com/basedosdados/mais/tree/master/bases/br_fgv_igp
+url_ckan: https://basedosdados.org/dataset/br-geobr-mapas
+url_github: https://github.com/basedosdados/mais/tree/master/bases/br_geobr_mapas
 
 # Descreva a base.
 # Ela é sobre o que?
 # Quais as principais fontes de dados?
 # Há links para FAQs e explicações?
 description: | # REQUIRED
-    Os índices de preços medem a variação média dos preços entre dois períodos na economia, sendo o meio de cálculo da inflação e cada índice possui suas próprias características. O Índice Geral de Preços (IGP) registra o ritmo evolutivo de preços como medida síntese da inflação nacional. Apresenta-se em três versões: Índice Geral de Preços - 10 (IGP-10), Índice Geral de Preços do Mercado (IGP-M) e Índice Geral de Preços – Disponibilidade Interna (IGP-DI). A diferença entre eles está no período de apuração das informações para cálculo do índice.
+    Dados geoespaciais do Brasil tratados e harmonizados pelo project geobr do IPEA.
+
+    Veja mais em: https://github.com/ipeaGIT/geobr
 
 # Qual organização disponibiliza os dados originais?
 # Opções: escolher dessa lista -> https://basedosdados.org/api/3/action/organization_list
-organization: br-fgv # REQUIRED
+organization: IPEA # REQUIRED
 
 # Qual departamento/grupo/pessoa mantém os dados originais?
 author:
-    name: Instituto Brasileiro de Economia - FGV
-    email: <email>
+    name: Pereira, R.H.M. et. al.
 
 # Onde encontrar os dados originais e mais informações?
 website:
-    - https://extra-ibre.fgv.br/IBRE/sitefgvdados/consulta.aspx
+    - https://github.com/ipeaGIT/geobr
 
 # Quais grupos caracterizam a base?
 # Opções: escolher dessa lista -> https://basedosdados.org/api/3/action/group_list
 groups:
-    - economia
+    - territorio
+    - urbanizacao
 
 # Quais etiquetas caracterizam a base?
 # Opções: escolher dessa lista -> https://basedosdados.org/api/3/action/tag_list
@@ -35,8 +37,7 @@ groups:
 #   - sem acentos
 #   - não repita nomes de grupos (ex. educacao, saude, meio ambiente, economia, etc.)
 tags:
-    - preco
-    - inflacao
+    - mapa
 
 # Em quais línguas a base (ou a fonte original) está disponível?
 # Regras: minúsculo, sem acentos.
@@ -48,10 +49,10 @@ languages:
 free: sim
 
 # Are microdata available for download?
-microdata: sim
+microdata: não
 
 # Existe uma API na fonte original?
-API: não
+API: sim
 
 # É necessário registrar um usuário para baixar os dados originais?
 registration: não
@@ -67,4 +68,4 @@ brazilian_IP: não
 # Caso não seja pública, ver opções aqui: https://help.data.world/hc/en-us/articles/115006114287-Common-license-types-for-datasets
 license: 
     name: MIT # REQUIRED
-    url: <url>
+    url: https://github.com/ipeaGIT/geobr/blob/master/r-package/LICENSE

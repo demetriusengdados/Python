@@ -18,11 +18,19 @@ TIPOS:
     - Mais detalhes: https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types
 
 */
-
-CREATE VIEW basedosdados-dev.br_fgv_igp.igp_og_mes AS
+CREATE VIEW basedosdados-dev.br_geobr_mapas.setor_censitario_2010 AS
 SELECT 
-SAFE_CAST(ano AS INT64) ano,
-SAFE_CAST(mes AS INT64) mes,
-SAFE_CAST(indice AS FLOAT64) indice,
-SAFE_CAST(variacao_mensal AS FLOAT64) variacao_mensal
-from basedosdados-dev.br_fgv_igp_staging.igp_og_mes as t
+SAFE_CAST(id_uf AS STRING) id_uf,
+SAFE_CAST(estado_abrev AS STRING) sigla_uf,
+SAFE_CAST( SAFE_CAST( SAFE_CAST(id_municipio AS FLOAT64) AS INT64) AS STRING) id_municipio, -- corrige ponto decimal
+SAFE_CAST(nome_municipio AS STRING) nome_municipio,
+SAFE_CAST(id_distrito AS STRING) id_distrito,
+SAFE_CAST(nome_distrito AS STRING) nome_distrito,
+SAFE_CAST(id_subdistrito AS STRING) id_subdistrito,
+SAFE_CAST(nome_subdistrito AS STRING) nome_subdistrito,
+SAFE_CAST(id_vizinhanca AS STRING) nome_vizinhanca, -- invertida com nome_vizinhanca
+SAFE_CAST( SAFE_CAST( SAFE_CAST(nome_vizinhanca AS FLOAT64) AS INT64) AS STRING) id_vizinhanca, -- invertida com id_vizinhanca e corrige ponto decimal
+SAFE_CAST(id_setor_censitario AS STRING) id_setor_censitario,
+SAFE_CAST(zona AS STRING) zona,
+SAFE.ST_GEOGFROMTEXT(geometria) geometria
+from basedosdados-dev.br_geobr_mapas_staging.setor_censitario_2010 as t
