@@ -18,10 +18,8 @@ TIPOS:
     - Mais detalhes: https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types
 
 */
-CREATE VIEW basedosdados-dev.br_bd_diretorios_brasil.uf AS
-SELECT
-SAFE_CAST(id_uf AS STRING) id_uf,
-SAFE_CAST(sigla AS STRING) sigla,
-SAFE_CAST(nome AS STRING) nome,
-SAFE_CAST(regiao AS STRING) regiao
-FROM basedosdados-dev.br_bd_diretorios_brasil_staging.uf AS t
+CREATE VIEW basedosdados-dev.br_bd_diretorios_data_tempo.trimestre AS
+SELECT 
+SAFE_CAST(trimestre AS INT64) trimestre,
+SAFE_CAST(semestre AS INT64) semestre
+FROM basedosdados-dev.br_bd_diretorios_data_tempo_staging.trimestre AS t

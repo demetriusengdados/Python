@@ -1,39 +1,34 @@
-dataset_id: br_bd_diretorios_brasil # AUTO GENERATED
+dataset_id: br_bd_diretorios_data_tempo # AUTO GENERATED
 
-url_ckan: https://basedosdados.org/dataset/br-bd-diretorios-brasil
-url_github: https://github.com/basedosdados/mais/tree/master/bases/br_bd_diretorios_brasil
+url_ckan: https://basedosdados.org/dataset/br-bd-diretorios-data-tempo
+url_github: https://github.com/basedosdados/mais/tree/master/bases/br_bd_diretorios_data_tempo
 
 # Descreva a base.
 # Ela é sobre o que?
 # Quais as principais fontes de dados?
 # Há links para FAQs e explicações?
 description: | # REQUIRED
-    Conjunto de diretórios brasileiros compilados pela Base dos Dados para cruzar informações de diferentes instituições.
+    Diretórios de data e tempo para padronização ISO-8601 na Base dos Dados.
 
 # Qual organização disponibiliza os dados originais?
 # Opções: escolher dessa lista -> https://basedosdados.org/api/3/action/organization_list
-organization: 
-    - "instituto-brasileiro-de-geografia-e-estatistica"
-    - "ministerio-da-educacao-e-cultura-mec"
-    - "secretaria-de-educacao-de-sao-paulo" # REQUIRED
+organization: br-bd
 
 # Qual departamento/grupo/pessoa mantém os dados originais?
 author:
-    name: Ricardo Dahis
-    email: rdahis@basedosdados.org
+    name: <nome>
+    email: <email>
 
 # Onde encontrar os dados originais e mais informações?
 website:
-    - https://www.ibge.gov.br/estatisticas/downloads-estatisticas.html
-    - https://dados.educacao.sp.gov.br/story/idesp
-    - http://bve.cibec.inep.gov.br/web/guest/dados
+    - <website 1>
+    - <website 2>
 
 # Quais grupos caracterizam a base?
 # Opções: escolher dessa lista -> https://basedosdados.org/api/3/action/group_list
 groups:
-    - "territorio"
-    - "educacao"
-    - "ciencia-tec-inov"
+    - <grupo 1>
+    - <grupo 2>
 
 # Quais etiquetas caracterizam a base?
 # Opções: escolher dessa lista -> https://basedosdados.org/api/3/action/tag_list
@@ -42,9 +37,8 @@ groups:
 #   - sem acentos
 #   - não repita nomes de grupos (ex. educacao, saude, meio ambiente, economia, etc.)
 tags:
-    - diretorio
-    - municipios
-    - escolas
+    - data
+    - tempo
 
 # Em quais línguas a base (ou a fonte original) está disponível?
 # Regras: minúsculo, sem acentos.
@@ -56,19 +50,19 @@ languages:
 free: sim
 
 # Are microdata available for download?
-microdata: não
+microdata: sim
 
 # Existe uma API na fonte original?
-API: não
+API: nao
 
 # É necessário registrar um usuário para baixar os dados originais?
-registration: não
+registration: nao
 
 # Como os dados originais estão disponibilizados?
 availability: online
 
 # A fonte original requer IP brasileiro para acesso?
-brazilian_IP: não
+brazilian_IP: nao
 
 # Essa base está sob qual licença?
 # A licença MIT se aplica a bases públicas.

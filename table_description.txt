@@ -1,9 +1,9 @@
-Diretório listando informações do IBGE sobre unidades da federação brasileiras.
+Diretório de trimestre.
 
 
 Para saber mais acesse:
-Website: https://basedosdados.org/dataset/br-bd-diretorios-brasil
-Github: https://github.com/basedosdados/mais/tree/master/bases/br_bd_diretorios_brasil
+Website: https://basedosdados.org/dataset/br-bd-diretorios-data-tempo
+Github: https://github.com/basedosdados/mais/tree/master/bases/br_bd_diretorios_data_tempo
 
 Ajude a manter o projeto :)
 Apoia-se: https://apoia.se/basedosdados
@@ -11,35 +11,28 @@ Apoia-se: https://apoia.se/basedosdados
 Publicado por
 -------------
 Nome: Ricardo Dahis
-Código: https://github.com/basedosdados/mais/tree/master/bases/br_basedosdados_diretorios_brasil/code
+Código: https://github.com/basedosdados/mais/tree/master/bases/br_bd_diretorios_data_tempo/code
 Website: www.ricardodahis.com
 Email: rdahis@basedosdados.orgTratado por
 -----------
-Nome: Ricardo Dahis
-Código: https://github.com/basedosdados/mais/tree/master/bases/br_basedosdados_diretorios_brasil/code
-Email: rdahis@basedosdados.org
+Nome: <nome>
 
 Nível da Observação (i.e. a granularidade da linha)
 -------------------
-- unidade da federação
+- trimestre
 
 Colunas identificando linhas unicamente
 -------------------
-- id_uf
+- trimestre
 
 Cobertura Temporal
 ------------------
 
 Cobertura Espacial
 ------------------
-- brasil
-
-Tratamento
-----------
-Coletei os valores de tabelas originais do IBGE.
 
 Frequencia de Atualização
 -------------------------
-recorrente
+único
 
 

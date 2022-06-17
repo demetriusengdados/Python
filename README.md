@@ -1,5 +1,4 @@
-Como capturar os dados de br_bd_diretorios_brasil?
 
-Para capturar esses dados basta entrar em X e fazer Y.
+Diretórios de data e tempo para padronização na Base dos Dados.
 
-Todo o código usado na captura está em `code/`
+Os dados publicados estão disponíveis em: https://basedosdados.org/dataset/br-bd-diretorios-data-tempo.
