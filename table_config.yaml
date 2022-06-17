@@ -1,27 +1,27 @@
 source_bucket_name: basedosdados-dev
 project_id_staging: basedosdados-dev
 project_id_prod: basedosdados-dev
-table_id: mes_brasil # AUTO GENERATED
-dataset_id: br_dieese_icv # AUTO GENERATED
+table_id: igp_og_mes # AUTO GENERATED
+dataset_id: br_fgv_igp # AUTO GENERATED
 
-url_ckan: https://basedosdados.org/dataset/br-dieese-icv # AUTO GENERATED
-url_github: https://github.com/basedosdados/mais/tree/master/bases/br_dieese_icv # AUTO GENERATED
+url_ckan: https://basedosdados.org/dataset/br-fgv-igp # AUTO GENERATED
+url_github: https://github.com/basedosdados/mais/tree/master/bases/br_fgv_igp # AUTO GENERATED
 
 version: v1.0 # REQUIRED
 
-last_updated: 2021-10-13 # AUTO GENERATED
+last_updated: 2021-10-15 # AUTO GENERATED
 
 # Descreva a tabela. Essas são as primeiras frases que um usuário vai ver.
 # Você não precisa ser muito conciso. Sinta-se a vontade para dar exemplos de
 # como usar os dados.
 # Se souber, liste também aplicações: pesquisa, apps, etc. que usem os dados.
 description: |  # REQUIRED
-    Variação mensal do custo de vida (ICV) na cidade de São Paulo 
+    O Índice Geral de Preços - Oferta Global (IGP-OG) é um indicador do movimento de preços que cobre todo o processo produtivo, desde preços de matérias-primas agrícolas e industriais, passando pelos preços de produtos intermediários até os de bens e serviços finais. É composto pela média aritmética ponderada do Índice de Preços ao Produtor Amplo (IPA) (60%), do Índice de Preços ao Consumidor (IPC) (30%) e do Índice Nacional de Custo da Construção (INCC) (10%). Para efeito de coleta de preços, o IGP-OG mede a evolução de preços no período compreendido entre o primeiro ao último dia do mês de referência. O conceito de Oferta Global (OG) refere-se à produção de bens e serviços tanto os produzidos internamente e exportados, quanto os importados.
 
 # Quem está completando esse arquivo config?
 published_by:
     name: Lucas Nascimento Moreira # REQUIRED
-    code_url: https://github.com/basedosdados/mais/tree/master/bases/br_dieese_icv/code # REQUIRED
+    code_url: https://github.com/basedosdados/mais/tree/master/bases/br_fgv_igp/code # REQUIRED
     website: <website>
     email: lucas.moreira@basedosdados.org
 
@@ -30,8 +30,8 @@ published_by:
 # Se essa pessoa é você, preencha abaixo com suas informações.
 treated_by:
     name: Lucas Nascimento Moreira
-    code_url: https://github.com/basedosdados/mais/tree/master/bases/br_dieese_icv/code
-    website: <website>
+    code_url: https://github.com/basedosdados/mais/tree/master/bases/br_fgv_igp/code
+    website: <onde encontrar os dados tratados>
     email: lucas.moreira@basedosdados.org
 
 # Se houve passos de tratamento, limpeza e manipulação de dados, descreva-os aqui.
@@ -42,7 +42,7 @@ treatment_description: |
 
 # Com qual frequência a base é atualizada?
 # Opções: hora | dia | semana | mes | 1 ano | 2 anos | 5 anos | 10 anos | unico | recorrente
-data_update_frequency: recorrente # REQUIRED 
+data_update_frequency: mes # REQUIRED 
 
 # Nível da observação (qual é a granularidade de cada linha na tabela)
 # Escolha todas as opções necessárias.
@@ -71,21 +71,11 @@ primary_keys:
 # Exemplo 2: tabela que cubra países inteiros na América Latina
 #   - brasil, argentina, peru, equador
 coverage_geo:
-    - sao paulo 
+    - brasil
 
 # Qual é a cobertura temporal (em anos) da tabela?
 # Opções: ..., 1990, 1991, ..., 1999, 2000, 2001, ..., 2019, 2020, ...
 coverage_time:
-    - 1959
-    - 1960
-    - 1961
-    - 1962
-    - 1963
-    - 1964
-    - 1965
-    - 1966
-    - 1967
-    - 1968
     - 1969
     - 1970
     - 1971
@@ -138,6 +128,7 @@ coverage_time:
     - 2018
     - 2019
     - 2020
+    - 2021
 
 # Liste as colunas da tabela que representam partições.
 # Não esqueça de deletar essas colunas nas tabelas .csv na hora de subir para o BigQuery.
@@ -169,7 +160,7 @@ columns: # REQUIRED
   
     -   
         name: indice
-        description: Número índice (jun. 1994 = 100)
+        description: Número índice (ago 1994 = 100)
         is_in_staging: True # Bool [True, False], whether the column is in the staging table
         is_partition: False # Bool [True, False], whether the column is a partition.
   

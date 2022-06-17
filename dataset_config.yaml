@@ -1,27 +1,27 @@
-dataset_id: br_dieese_icv # AUTO GENERATED
+dataset_id: br_fgv_igp # AUTO GENERATED
 
-url_ckan: https://basedosdados.org/dataset/br-dieese-icv
-url_github: https://github.com/basedosdados/mais/tree/master/bases/br_dieese_icv
+url_ckan: https://basedosdados.org/dataset/br-fgv-igp
+url_github: https://github.com/basedosdados/mais/tree/master/bases/br_fgv_igp
 
 # Descreva a base.
 # Ela é sobre o que?
 # Quais as principais fontes de dados?
 # Há links para FAQs e explicações?
 description: | # REQUIRED
-    O Índice do Custo de Vida do Departamento Intersindical de Estatística e Estudos Socioeconômicos (ICV-DIEESE) abrange todos os domicílios e faixas de renda e busca mensurar a variação dos preços dentro do município de São Paulo. Ele é calculado com base na cesta de bens e serviços definida pela Pesquisa de Orçamento Familiar (POF), para que o cálculo acompanhe as mudanças de consumo das famílias paulistanas ao longo do tempo. Os grupos utilizados para este cálculo são: Alimentação, Habitação, Equipamentos Domésticos, Transporte, Vestuário, Educação e Leitura, Saúde, Recreação, Despesas Pessoais e Despesas Diversas. 
+    Os índices de preços medem a variação média dos preços entre dois períodos na economia, sendo o meio de cálculo da inflação e cada índice possui suas próprias características. O Índice Geral de Preços (IGP) registra o ritmo evolutivo de preços como medida síntese da inflação nacional. Apresenta-se em três versões: Índice Geral de Preços - 10 (IGP-10), Índice Geral de Preços do Mercado (IGP-M) e Índice Geral de Preços – Disponibilidade Interna (IGP-DI). A diferença entre eles está no período de apuração das informações para cálculo do índice.
 
 # Qual organização disponibiliza os dados originais?
 # Opções: escolher dessa lista -> https://basedosdados.org/api/3/action/organization_list
-organization: br-dieese # REQUIRED
+organization: br-fgv # REQUIRED
 
 # Qual departamento/grupo/pessoa mantém os dados originais?
 author:
-    name: Departamento Intersindical de Estatística e Estudos Socioeconômicos
+    name: Instituto Brasileiro de Economia - FGV
     email: <email>
 
 # Onde encontrar os dados originais e mais informações?
 website:
-    - https://www.dieese.org.br/analiseicv/icv.html
+    - https://extra-ibre.fgv.br/IBRE/sitefgvdados/consulta.aspx
 
 # Quais grupos caracterizam a base?
 # Opções: escolher dessa lista -> https://basedosdados.org/api/3/action/group_list
@@ -35,9 +35,8 @@ groups:
 #   - sem acentos
 #   - não repita nomes de grupos (ex. educacao, saude, meio ambiente, economia, etc.)
 tags:
-    - custo de vida
+    - preco
     - inflacao
-    - cesta basica
 
 # Em quais línguas a base (ou a fonte original) está disponível?
 # Regras: minúsculo, sem acentos.
@@ -52,7 +51,7 @@ free: sim
 microdata: sim
 
 # Existe uma API na fonte original?
-API: nao
+API: não
 
 # É necessário registrar um usuário para baixar os dados originais?
 registration: não

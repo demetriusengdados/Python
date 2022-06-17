@@ -19,10 +19,10 @@ TIPOS:
 
 */
 
-CREATE VIEW basedosdados-dev.br_dieese_icv.mes_brasil AS
+CREATE VIEW basedosdados-dev.br_fgv_igp.igp_og_mes AS
 SELECT 
 SAFE_CAST(ano AS INT64) ano,
 SAFE_CAST(mes AS INT64) mes,
 SAFE_CAST(indice AS FLOAT64) indice,
 SAFE_CAST(variacao_mensal AS FLOAT64) variacao_mensal
-FROM basedosdados-dev.br_dieese_icv_staging.mes_brasil AS t
+from basedosdados-dev.br_fgv_igp_staging.igp_og_mes as t

@@ -1,9 +1,9 @@
-Variação mensal do custo de vida (ICV) na cidade de São Paulo 
+O Índice Geral de Preços - Oferta Global (IGP-OG) é um indicador do movimento de preços que cobre todo o processo produtivo, desde preços de matérias-primas agrícolas e industriais, passando pelos preços de produtos intermediários até os de bens e serviços finais. É composto pela média aritmética ponderada do Índice de Preços ao Produtor Amplo (IPA) (60%), do Índice de Preços ao Consumidor (IPC) (30%) e do Índice Nacional de Custo da Construção (INCC) (10%). Para efeito de coleta de preços, o IGP-OG mede a evolução de preços no período compreendido entre o primeiro ao último dia do mês de referência. O conceito de Oferta Global (OG) refere-se à produção de bens e serviços tanto os produzidos internamente e exportados, quanto os importados.
 
 
 Para saber mais acesse:
-Website: https://basedosdados.org/dataset/br-dieese-icv
-Github: https://github.com/basedosdados/mais/tree/master/bases/br_dieese_icv
+Website: https://basedosdados.org/dataset/br-fgv-igp
+Github: https://github.com/basedosdados/mais/tree/master/bases/br_fgv_igp
 
 Ajude a manter o projeto :)
 Apoia-se: https://apoia.se/basedosdados
@@ -11,11 +11,11 @@ Apoia-se: https://apoia.se/basedosdados
 Publicado por
 -------------
 Nome: Lucas Nascimento Moreira
-Código: https://github.com/basedosdados/mais/tree/master/bases/br_dieese_icv/code
+Código: https://github.com/basedosdados/mais/tree/master/bases/br_fgv_igp/code
 Email: lucas.moreira@basedosdados.orgTratado por
 -----------
 Nome: Lucas Nascimento Moreira
-Código: https://github.com/basedosdados/mais/tree/master/bases/br_dieese_icv/code
+Código: https://github.com/basedosdados/mais/tree/master/bases/br_fgv_igp/code
 Email: lucas.moreira@basedosdados.org
 
 Nível da Observação (i.e. a granularidade da linha)
@@ -30,16 +30,6 @@ Colunas identificando linhas unicamente
 
 Cobertura Temporal
 ------------------
-- 1959
-- 1960
-- 1961
-- 1962
-- 1963
-- 1964
-- 1965
-- 1966
-- 1967
-- 1968
 - 1969
 - 1970
 - 1971
@@ -92,10 +82,11 @@ Cobertura Temporal
 - 2018
 - 2019
 - 2020
+- 2021
 
 Cobertura Espacial
 ------------------
-- sao paulo
+- brasil
 
 Tratamento
 ----------
@@ -105,6 +96,6 @@ Tratamento
 
 Frequencia de Atualização
 -------------------------
-recorrente
+mes
 
 
