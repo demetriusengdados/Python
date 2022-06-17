@@ -19,16 +19,16 @@ TIPOS:
 
 */
 
-CREATE VIEW input-dados.br_anatel_banda_larga_fixa.pble AS
+CREATE VIEW basedosdados-dev.br_anatel_telefonia_movel.tecnologia AS
 SELECT 
 SAFE_CAST(ano AS INT64) ano,
 SAFE_CAST(mes AS INT64) mes,
-SAFE_CAST(dia AS INT64) dia,
 SAFE_CAST(sigla_uf AS STRING) sigla_uf,
-SAFE_CAST(id_municipio AS STRING) id_municipio,
-SAFE_CAST(rede AS STRING) rede,
-SAFE_CAST(id_escola AS STRING) id_escola,
+SAFE_CAST(ddd AS STRING) ddd,
+SAFE_CAST(cnpj AS STRING) cnpj,
 SAFE_CAST(empresa AS STRING) empresa,
+SAFE_CAST(porte_empresa AS STRING) porte_empresa,
 SAFE_CAST(tecnologia AS STRING) tecnologia,
-SAFE_CAST(conexao AS STRING) conexao
-from input-dados.br_anatel_banda_larga_fixa_staging.pble as t
+SAFE_CAST(sinal AS STRING) sinal,
+SAFE_CAST(acessos AS INT64) acessos
+FROM basedosdados-dev.br_anatel_telefonia_movel_staging.tecnologia AS t
