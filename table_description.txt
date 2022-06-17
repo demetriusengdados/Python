@@ -1,4 +1,4 @@
-Informações de alfabetização gerais por setor censitário
+Informações sobre idade, genero e raça para idades de 0 a 4 anos por setores censitários
 
 
 Para saber mais acesse:
