@@ -1,46 +1,48 @@
 source_bucket_name: basedosdados-dev
 project_id_staging: basedosdados-dev
 project_id_prod: basedosdados-dev
-table_id: terceirizados # AUTO GENERATED
-dataset_id: br_cgu_pessoal_executivo_federal # AUTO GENERATED
+table_id: mes_brasil # AUTO GENERATED
+dataset_id: br_dieese_icv # AUTO GENERATED
 
-url_ckan: https://basedosdados.org/dataset/br-cgu-pessoal-executivo-federal # AUTO GENERATED
-url_github: https://github.com/basedosdados/mais/tree/master/bases/br_cgu_pessoal_executivo_federal # AUTO GENERATED
+url_ckan: https://basedosdados.org/dataset/br-dieese-icv # AUTO GENERATED
+url_github: https://github.com/basedosdados/mais/tree/master/bases/br_dieese_icv # AUTO GENERATED
 
 version: v1.0 # REQUIRED
 
-last_updated: 2021-07-10 # AUTO GENERATED
+last_updated: 2021-10-13 # AUTO GENERATED
 
 # Descreva a tabela. Essas são as primeiras frases que um usuário vai ver.
 # Você não precisa ser muito conciso. Sinta-se a vontade para dar exemplos de
 # como usar os dados.
 # Se souber, liste também aplicações: pesquisa, apps, etc. que usem os dados.
 description: |  # REQUIRED
-    Terceirizados contratados pelo governo para prestação de serviços gerais.
+    Variação mensal do custo de vida (ICV) na cidade de São Paulo 
 
 # Quem está completando esse arquivo config?
 published_by:
-    name: Crislane A. Souza  # REQUIRED
-    code_url: https://github.com/basedosdados/mais/tree/master/bases/br_cgu_pessoal_executivo_federal/code # REQUIRED
-    website: https://github.com/crislanealves
-    email: crislanealves@protonmail.com
+    name: Lucas Nascimento Moreira # REQUIRED
+    code_url: https://github.com/basedosdados/mais/tree/master/bases/br_dieese_icv/code # REQUIRED
+    website: <website>
+    email: lucas.moreira@basedosdados.org
 
 # Qual organização/departamento/pessoa tratou os dados?
 # As vezes há um ponto intermediário entre os dados originais e subir na Base dos Dados.
 # Se essa pessoa é você, preencha abaixo com suas informações.
 treated_by:
-    name: Crislane A. Souza
-    code_url: https://github.com/basedosdados/mais/tree/master/bases/br_cgu_pessoal_executivo_federal/code
-    website: https://github.com/crislanealves
-    email: crislanealves@protonmail.com
+    name: Lucas Nascimento Moreira
+    code_url: https://github.com/basedosdados/mais/tree/master/bases/br_dieese_icv/code
+    website: <website>
+    email: lucas.moreira@basedosdados.org
 
 # Se houve passos de tratamento, limpeza e manipulação de dados, descreva-os aqui.
 treatment_description: | 
-    - Exclusão, renomeação e reordenação de colunas. 
+    - Coleta dos dados a partir da API ipeadatapy;
+    - Exclusão e renomeação de variáveis segundo diretrizes da BD;
+    - Junção dos dataframes
 
 # Com qual frequência a base é atualizada?
 # Opções: hora | dia | semana | mes | 1 ano | 2 anos | 5 anos | 10 anos | unico | recorrente
-data_update_frequency: trimestral # REQUIRED 
+data_update_frequency: recorrente # REQUIRED 
 
 # Nível da observação (qual é a granularidade de cada linha na tabela)
 # Escolha todas as opções necessárias.
@@ -51,7 +53,6 @@ data_update_frequency: trimestral # REQUIRED
 observation_level: #REQUIRED
     - ano
     - mes
-    - id terceirizado
 
 # Quais colunas identificam uma linha unicamente?
 # Preencha com os nomes de colunas. Ex: id_municipio, ano.
@@ -59,7 +60,6 @@ observation_level: #REQUIRED
 primary_keys:
     - ano
     - mes
-    - id_terceirizado
 
 # Qual é a cobertura espacial da tabela?
 # Regras:
@@ -71,12 +71,62 @@ primary_keys:
 # Exemplo 2: tabela que cubra países inteiros na América Latina
 #   - brasil, argentina, peru, equador
 coverage_geo:
-    - brasil
+    - sao paulo 
 
 # Qual é a cobertura temporal (em anos) da tabela?
 # Opções: ..., 1990, 1991, ..., 1999, 2000, 2001, ..., 2019, 2020, ...
 coverage_time:
-
+    - 1959
+    - 1960
+    - 1961
+    - 1962
+    - 1963
+    - 1964
+    - 1965
+    - 1966
+    - 1967
+    - 1968
+    - 1969
+    - 1970
+    - 1971
+    - 1972
+    - 1973
+    - 1974
+    - 1975
+    - 1976
+    - 1977
+    - 1978
+    - 1979
+    - 1980
+    - 1981
+    - 1982
+    - 1983
+    - 1984
+    - 1985
+    - 1986
+    - 1987
+    - 1988
+    - 1989
+    - 1990
+    - 1991
+    - 1992
+    - 1993
+    - 1994
+    - 1995
+    - 1996
+    - 1997
+    - 1998
+    - 1999
+    - 2000
+    - 2001
+    - 2002
+    - 2003
+    - 2004
+    - 2005
+    - 2006
+    - 2007
+    - 2008
+    - 2009
     - 2010
     - 2011
     - 2012
@@ -88,7 +138,6 @@ coverage_time:
     - 2018
     - 2019
     - 2020
-    - 2021
 
 # Liste as colunas da tabela que representam partições.
 # Não esqueça de deletar essas colunas nas tabelas .csv na hora de subir para o BigQuery.
@@ -119,121 +168,13 @@ columns: # REQUIRED
         is_partition: False # Bool [True, False], whether the column is a partition.
   
     -   
-        name: id_terceirizado
-        description: Registro do terceirizado
+        name: indice
+        description: Número índice (jun. 1994 = 100)
         is_in_staging: True # Bool [True, False], whether the column is in the staging table
         is_partition: False # Bool [True, False], whether the column is a partition.
   
     -   
-        name: sigla_orgao_superior_unidade_gestora
-        description: Sigla do órgão superior da unidade gestora do terceirizado
-        is_in_staging: True # Bool [True, False], whether the column is in the staging table
-        is_partition: False # Bool [True, False], whether the column is a partition.
-  
-    -   
-        name: codigo_unidade_gestora
-        description: Código da unidade gestora do terceirizado
-        is_in_staging: True # Bool [True, False], whether the column is in the staging table
-        is_partition: False # Bool [True, False], whether the column is a partition.
-  
-    -   
-        name: unidade_gestora
-        description: Nome da unidade gestora do terceirizado
-        is_in_staging: True # Bool [True, False], whether the column is in the staging table
-        is_partition: False # Bool [True, False], whether the column is a partition.
-  
-    -   
-        name: sigla_unidade_gestora
-        description: Sigla da unidade gestora do terceirizado
-        is_in_staging: True # Bool [True, False], whether the column is in the staging table
-        is_partition: False # Bool [True, False], whether the column is a partition.
-  
-    -   
-        name: contrato_empresa
-        description: Número do contrato com a empresa terceirizada 
-        is_in_staging: True # Bool [True, False], whether the column is in the staging table
-        is_partition: False # Bool [True, False], whether the column is a partition.
-  
-    -   
-        name: cnpj_empresa
-        description: CNPJ da empresa terceirizada
-        is_in_staging: True # Bool [True, False], whether the column is in the staging table
-        is_partition: False # Bool [True, False], whether the column is a partition.
-  
-    -   
-        name: razao_social_empresa
-        description: Razão Social da empresa terceirizada
-        is_in_staging: True # Bool [True, False], whether the column is in the staging table
-        is_partition: False # Bool [True, False], whether the column is a partition.
-  
-    -   
-        name: cpf
-        description: CPF
-        is_in_staging: True # Bool [True, False], whether the column is in the staging table
-        is_partition: False # Bool [True, False], whether the column is a partition.
-  
-    -   
-        name: nome
-        description: Nome completo do terceirizado
-        is_in_staging: True # Bool [True, False], whether the column is in the staging table
-        is_partition: False # Bool [True, False], whether the column is a partition.
-  
-    -   
-        name: categoria_profissional
-        description: Categoria profissional
-        is_in_staging: True # Bool [True, False], whether the column is in the staging table
-        is_partition: False # Bool [True, False], whether the column is a partition.
-  
-    -   
-        name: nivel_escolaridade
-        description: Nível de escolaridade exigido pela ocupação
-        is_in_staging: True # Bool [True, False], whether the column is in the staging table
-        is_partition: False # Bool [True, False], whether the column is a partition.
-  
-    -   
-        name: quantidade_horas_trabalhadas_semanais
-        description: Quantidade de horas semanais de trabalho
-        is_in_staging: True # Bool [True, False], whether the column is in the staging table
-        is_partition: False # Bool [True, False], whether the column is a partition.
-  
-    -   
-        name: unidade_trabalho
-        description: Unidade onde o terceirizado trabalha
-        is_in_staging: True # Bool [True, False], whether the column is in the staging table
-        is_partition: False # Bool [True, False], whether the column is a partition.
-  
-    -   
-        name: valor_mensal
-        description: Valor mensal do salário do terceirizado
-        is_in_staging: True # Bool [True, False], whether the column is in the staging table
-        is_partition: False # Bool [True, False], whether the column is a partition.
-  
-    -   
-        name: custo_mensal
-        description: Custo total mensal do terceirizado
-        is_in_staging: True # Bool [True, False], whether the column is in the staging table
-        is_partition: False # Bool [True, False], whether the column is a partition.
-  
-    -   
-        name: sigla_orgao_trabalho
-        description: Sigla do órgão onde o terceirizado trabalha
-        is_in_staging: True # Bool [True, False], whether the column is in the staging table
-        is_partition: False # Bool [True, False], whether the column is a partition.
-  
-    -   
-        name: nome_orgao_trabalho
-        description: Nome do órgão onde o terceirizado trabalha
-        is_in_staging: True # Bool [True, False], whether the column is in the staging table
-        is_partition: False # Bool [True, False], whether the column is a partition.
-  
-    -   
-        name: codigo_siafi_trabalho
-        description: Código SIAFI do órgão onde o terceirizado trabalha
-        is_in_staging: True # Bool [True, False], whether the column is in the staging table
-        is_partition: False # Bool [True, False], whether the column is a partition.
-  
-    -   
-        name: codigo_siape_trabalho
-        description: Código SIAPE do órgão onde o terceirizado trabalha
+        name: variacao_mensal
+        description: Variação percentual mensal
         is_in_staging: True # Bool [True, False], whether the column is in the staging table
         is_partition: False # Bool [True, False], whether the column is a partition.
