@@ -1,0 +1,8 @@
+-start the hadoop & check the nodes.
+-create a mysql database and create table 
+-import the data into hdfs using sqoop cmd
+	sqoop import --connect jdbc:mysql://localhost:3306/databasename --table table_name --username db_username --password db_password --target-dir /sqooptransfer/emp -m 1
+-after starting hive create a table using hive
+	cmd: use test;
+		 create external table table_name (table colums) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' LOCATION '/sqooptransfer/emp1(location of the sqoop file'
+-perform normal sql querys using new hive table.

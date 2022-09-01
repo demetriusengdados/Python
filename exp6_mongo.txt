@@ -1,0 +1,49 @@
+sudo service mongod start
+        
+ mongo
+
+> use mongodemo
+
+> show dbs
+
+
+//insert items
+> db.inventory.insertMany([
+... { item: "journal", qty: 25, size: { h: 14, w: 21, uom: "cm"}, status: "A"},
+... { item: "notebook", qty: 50, size: { h: 8.5, w: 11, uom: "in"}, status: "A"},
+... { item: "paper", qty: 100, size: { h: 8.5, w: 11, uom: "in"}, status: "D"}
+... ]);
+//select items
+> db.inventory.find( {} )
+//specify item
+> db.inventory.find( { status: "D" } )
+
+//specify condition using query operations
+> db.inventory.find( { status: { $in: ["A","D"] } } )
+
+//specify and as well as or conditions
+> db.inventory.find( {
+... status: "A",
+... $or: [ { qty: { $lt: 30 } }, {item: /^p/ } ]
+... } )
+
+//specify and conditions
+>db.inventory.find( { status: "A", qty: { $lt: 30 } } )
+
+//specify or conditions
+>db.inventory.find( { $or: [{status: "A"}, { qty: { $lt: 30 } } ] }  )
+
+//update
+db.inventory.updateOne(
+{ item: "paper"},
+{
+	$set: { "size.uom": "cm", status: "P" },
+	$currentDate: { lastModified: true }
+}
+)
+
+//delete
+db.inventory.deleteMany({status : "A" })
+
+
+

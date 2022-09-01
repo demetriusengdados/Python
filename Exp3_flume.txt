@@ -1,0 +1,16 @@
+-start hadoop
+-hdfs dfs -mkdir -p /flume/ (create dir in hdfs)
+-copy the nethd.conf in flume dir
+-flume-ng agent -c /home/hadoop/flume/ -f /home/hadoop/flume/nethd.conf --name NetcatAgent -Dflume.root.logger=INFO,console
+-open another terminal n type the port mentiioned in nethd.conf file
+-telnet 56563 (port)
+-after inserting the data download the file from the hdfs storage using localhost:50070
+-create a database in hive using create database
+-create a table using create table cmd
+create external table data(no int)
+    > row format delimited
+    > fields terminated by ' '
+    > lines terminated by '\n';
+-load the path 
+	load data inpath '/flume/FlumeData.*' into table data;
+-display the output.	

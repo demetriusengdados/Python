@@ -1,0 +1,12 @@
+EXP 4: sqoop and hive
+
+-start the hadoop using start-all.sh and check with jps
+-after starting create a new database in mysql
+-insert the data into hdfs using sqoop 
+	cmd: sqoop import --connect jdbc:mysql://localhost:3306/database_name --table table_name --username mysql_username --password mysql_password --target-dir /sqooptransfer/emp(this can be any name) -m 1
+
+-after using sqoop we need to start the hive by typing hive on the terminal.
+-after starting hive create a table using hive
+	cmd: use test;
+		 create external table table_name (table colums) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' LOCATION '/sqooptransfer/emp1(location of the sqoop file'
+-perform normal sql querys using new hive table.		  	

@@ -1,0 +1,86 @@
+sqoop list-databases --connect jdbc:mysql://localhost:3306 --username hadoop --password 123456 //find database
+
+
+jps
+
+format the name node when copying the file( hadoop namenode -format)
+
+sqoop import  --connect jdbc:mysql://localhost:3306/test --username hadoop --password 123456 --table emp --target-dir /sqooptransfer/emp -m 1 (transfer the db to the dir)
+
+hdfs dfs -cat /sqooptransfer/emp/part* (to get the data from the dir)
+
+
+sqoop export --username hadoop --password 123456 --connect jdbc:mysql://localhost/opdb --table emp --export-dir /sqooptransfer/emp/part-m-00000 --fields-terminated-by ',' --lines-terminated-by '\n'(exporting the data to database)
+
+
+
+hive
+ls: cannot access '/home/hadoop/spark/lib/spark-assembly-*.jar': No such file or directory
+
+Logging initialized using configuration in jar:file:/home/hadoop/hive/lib/hive-common-1.2.2.jar!/hive-log4j.properties
+hive> create table emp2  
+    > (eid int,
+    > name varchar(30)
+    > ,
+    > esal int)
+    > row format delimited
+    > fields terminated by ','
+    > lines terminated by '\n';
+OK
+
+
+hive> select * from emp2
+    > ;
+OK
+Time taken: 0.387 seconds
+hive> LOAD DATA INPATH '/sqooptransfer/emp/part-m-00000' INTO table emp2;
+Loading data to table default.emp2
+Table default.emp2 stats: [numFiles=1, totalSize=12]
+OK
+Time taken: 0.453 seconds
+hive> select * from emp2
+    > ;
+OK
+1	raj	15000
+Time taken: 0.265 seconds, Fetched: 1 row(s)
+hive> 
+
+
+hadoop@speedfreak-PC:~$ conda activate base
+(base) hadoop@speedfreak-PC:~$ conda deactivate base
+deactivate does not accept arguments
+remainder_args: ['base']
+
+(base) hadoop@speedfreak-PC:~$ conda deactivate
+hadoop@speedfreak-PC:~$ 
+
+//to turn the base on permanent
+hadoop@speedfreak-PC:~$ conda config --set auto_activate_base False^C
+
+
+
+
+
+Nethd.conf
+NetcatAgent.sources = Netcat
+NetcatAgent.channels = MemChannel
+NetcatAgent.sinks = hdfsâlsink
+
+NetcatAgent.sources.Netcat.type = netcat
+NetcatAgent.sources.Netcat.bind = localhost
+NetcatAgent.sources.Netcat.port = 56563
+NetcatAgent.sources.Netcat.channels = MemChannel
+
+NetcatAgent.channels.MemChannel.type = memory
+NetcatAgent.channels.MemChannel.capacity = 1000
+
+# Define a source on agent and connect to channel memoryChannel. 
+
+NetcatAgent.sinks.hdfsâsink.type = hdfs 
+NetcatAgent.sinks.hdfsâsink.channel = MemChannel 
+NetcatAgent.sinks.hdfsâsink.hdfs.path = hdfs://localhost:8020/flume/
+NetcatAgent.sinks.hdfsâsink.hdfs.fileType = DataStream
+NetcatAgent.sinks.hdfsâsink.hdfs.writeFormat = Text
+NetcatAgent.sinks.hdfsâsink.hdfs.filePrefix=
+NetcatAgent.sinks.hdfsâsink.hdfs.fileSuffix=.txt
+

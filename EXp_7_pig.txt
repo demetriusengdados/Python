@@ -1,0 +1,11 @@
+-start the hadoop & check the nodes.
+-create a mysql database and create table 
+-import the data into hdfs using sqoop cmd
+	sqoop import --connect jdbc:mysql://localhost:3306/databasename --table table_name --username db_username --password db_password --target-dir /sqooptransfer/emp -m 1
+
+-load the imported hdfs data into pig using
+	-pig -x local
+	-sqoopdata = LOAD 'hdfs://localhost:8020/sqooptransfer/emp1(sqoop location)' USING PigStorage(',') AS (colums of database) //(eid:int,esal:int);
+	-output1 = FILTER sqoopdata BY esal > 2000 (any conditions);
+	-dump output1;
+	you will get the output at the end.
